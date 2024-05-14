@@ -1,8 +1,10 @@
 # newday-task-jl
 
-I wanted to have a play with 
+I wanted to have a play with creating a local clustered environment rather than using the normal single node local run, to make it more like submitting a job to a production cluster.
 
-# Build and run
+I gave myself an hour or so, and probaly should have spent more time on tests and such for the actual task... but I had fun :D
+
+# Build
 `make build`
 
 Then for a single node
@@ -11,14 +13,17 @@ Then for a single node
 Or for cluster mode
 `make run-scale`
 
-# Development
+# Run
 Submit Python jobs with the command:
-`make submit app=dir/relative/to/spark_apps/dir`
+`make submit app=dir/relative/to/src/dir`
 e.g.
 `make submit app=task.py`
 
-For speed, copy a file into a running master container without having to re-up docker
-`docker cp -L spark_apps/task.py da-spark-master:/opt/spark/apps/task.py`
+Output files will be saved on the networked volume 'output_data'
+
+# Development
+To minimise dev loop, copy a file into a running master container without having to re-up docker
+`docker cp -L src/task.py da-spark-master:/opt/spark/apps/task.py`
 
 # Test
 I can't remember how the .toml piece works for forcing pytest paths so run like this from root
