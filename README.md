@@ -28,6 +28,7 @@ To minimise dev loop, copy a file into a running master container without having
 # Test
 I can't remember how the .toml piece works for forcing pytest paths so run like this from root
 `python -m pytest`
+Using a venv created from 'test.txt'
 
 ## Dependency management
 _Copied, as always, from the pip compile website_
