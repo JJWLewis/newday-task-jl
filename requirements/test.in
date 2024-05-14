@@ -1,0 +1,7 @@
+ipython
+pandas
+pyarrow
+numpy
+pyspark==3.4.0
+pytest
+chispa
